@@ -4,6 +4,8 @@
 
 面向设计师的 **Skill + 智能体**，覆盖建筑/CAD、UI/UX、产品与品牌。它通过**非线性生命周期**把模糊的需求变成经过验证的交付物。采用开放的 [Agent Skills](https://agentskills.io) 格式，可在 Claude Code、Codex、ChatGPT、Gemini CLI、OpenCode、Hermes Agent 等平台运行。
 
+> 🌐 **网站:** [https://maldos23.github.io/cad-agent-builder/](https://maldos23.github.io/cad-agent-builder/)
+
 ```
         ┌──────────── 构思 ────────────┐
         ▼                              │

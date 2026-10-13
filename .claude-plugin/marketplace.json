@@ -1,0 +1,15 @@
+{
+  "name": "cad-agent-builder",
+  "description": "Design-lifecycle skill + design-lead agent for designers (architecture/CAD, UI/UX, product, brand).",
+  "owner": {
+    "name": "maldos23"
+  },
+  "plugins": [
+    {
+      "name": "cad-agent-builder",
+      "source": "./",
+      "description": "Design-lifecycle skill + design-lead agent for designers.",
+      "version": "1.0.0"
+    }
+  ]
+}

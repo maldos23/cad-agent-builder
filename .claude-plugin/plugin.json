@@ -1,0 +1,9 @@
+{
+  "name": "cad-agent-builder",
+  "version": "1.0.0",
+  "description": "Design-lifecycle skill + design-lead agent for designers (architecture/CAD, UI/UX, product, brand). Non-linear phases, living work plan, prerequisite checks, replies in the user's language.",
+  "author": { "name": "maldos23" },
+  "license": "MIT",
+  "repository": "https://github.com/maldos23/cad-agent-builder",
+  "keywords": ["design", "cad", "cadcraft", "architecture", "ui-ux", "workflow", "agent", "skill"]
+}

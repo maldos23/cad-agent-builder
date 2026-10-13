@@ -1,0 +1,103 @@
+{
+  "meta": {
+    "title": "cad-agent-builder — skill de ciclo de diseño para agentes de IA"
+  },
+  "nav": {
+    "github": "GitHub",
+    "release": "Release",
+    "lang": "Idioma",
+    "theme": "Cambiar tema"
+  },
+  "hero": {
+    "badge": "Agent Skill · formato abierto",
+    "title": "De una idea vaga a entregables de diseño verificados",
+    "sub": "Una skill y un agente para diseñadores (arquitectura/CAD, UI/UX, producto, marca) que siguen un ciclo de vida no lineal en Claude Code, Codex, ChatGPT, Gemini CLI, OpenCode, Hermes Agent y más.",
+    "install": "Instalar",
+    "repo": "Ver en GitHub",
+    "figcap": "Figura interactiva: cómo trabaja una losa reticular — nervaduras y casetones. Dibujada con la skill Anatomy."
+  },
+  "cycle": {
+    "title": "Un ciclo de vida no lineal",
+    "sub": "Las fases son estados, no pasos. Entra donde está tu proyecto y regresa cuando cambian los datos.",
+    "phases": [
+      {
+        "name": "Idea",
+        "q": "¿Qué hacemos, para quién y por qué?",
+        "out": "Brief: objetivo, usuarios, restricciones, criterios de éxito"
+      },
+      {
+        "name": "Investigación",
+        "q": "¿Qué existe y qué normas aplican?",
+        "out": "Normas, referencias, productos comerciales, datos de usuario"
+      },
+      {
+        "name": "Análisis",
+        "q": "¿Qué implican los datos?",
+        "out": "Requisitos, programa, cargas, flujos, riesgos"
+      },
+      {
+        "name": "Diseño",
+        "q": "¿Cuál es la solución?",
+        "out": "Plantas, planos, wireframes, conceptos"
+      },
+      {
+        "name": "Especificaciones",
+        "q": "¿Cómo se construye exactamente?",
+        "out": "Materiales, medidas, normas, cantidades, tokens"
+      },
+      {
+        "name": "Ejecución",
+        "q": "Producirlo y verificarlo",
+        "out": "DXF/PDF/Figma/código, renderizado y revisado"
+      }
+    ]
+  },
+  "features": {
+    "title": "Qué hace",
+    "items": [
+      {
+        "t": "Primero el triage",
+        "d": "Entra en la fase que tu proyecto necesita: ¿ya tienes una planta? Pasa directo a Especificaciones."
+      },
+      {
+        "t": "Plan de trabajo vivo",
+        "d": "Lleva DESIGN_PLAN.md: brief, tabla de fases, decisiones, supuestos, preguntas abiertas, requisitos y entregables."
+      },
+      {
+        "t": "Responde en tu idioma",
+        "d": "La skill está escrita en inglés, pero siempre responde en el idioma en que le escribes."
+      },
+      {
+        "t": "Pide ayuda cuando se bloquea",
+        "d": "Primero revisa sus herramientas (CADCraft, MCP de Figma, gh, python3). Si falta algo, te pide una acción concreta y te ofrece una alternativa."
+      },
+      {
+        "t": "Resultados honestos",
+        "d": "Marca los supuestos, indica que lo estructural es un prediseño que debe validar un profesional con licencia, y revisa visualmente cada plano antes de reportar."
+      }
+    ]
+  },
+  "install": {
+    "title": "Instalación",
+    "sub": "Primero clona el repo y luego elige tu plataforma.",
+    "copy": "Copiar",
+    "copied": "¡Copiado!",
+    "notes": {
+      "all": "Instala la skill para Claude Code, Codex, Gemini CLI, OpenCode y Hermes.",
+      "claude": "Plugin (recomendado) dentro de Claude Code, o instalación manual.",
+      "codex": "Luego escribe /skills o menciona $design-lifecycle.",
+      "gemini": "Compruébalo con /skills list.",
+      "opencode": "OpenCode también lee ~/.claude/skills/.",
+      "hermes": "Queda disponible como el comando /design-lifecycle.",
+      "chatgpt": "Descarga el zip, abre Skills en la barra lateral y súbelo. En ChatGPT web, pega platforms/instructions.md en un Custom GPT.",
+      "cursor": "Ejecútalo en la raíz de tu proyecto.",
+      "copilot": "Ejecútalo en la raíz de tu proyecto.",
+      "agentsmd": "Windsurf, Aider, Zed y otras plataformas con AGENTS.md. Ejecútalo en la raíz de tu proyecto."
+    },
+    "all": "Todas"
+  },
+  "footer": {
+    "license": "Licencia MIT",
+    "made": "Herramienta de prediseño: lo estructural debe validarlo un profesional con licencia (DRO)."
+  }
+}

@@ -1,0 +1,103 @@
+{
+  "meta": {
+    "title": "cad-agent-builder — design lifecycle skill for AI agents"
+  },
+  "nav": {
+    "github": "GitHub",
+    "release": "Release",
+    "lang": "Language",
+    "theme": "Toggle theme"
+  },
+  "hero": {
+    "badge": "Agent Skill · open format",
+    "title": "From a vague idea to verified design deliverables",
+    "sub": "A skill and agent for designers (architecture/CAD, UI/UX, product, brand) that runs a non-linear lifecycle in Claude Code, Codex, ChatGPT, Gemini CLI, OpenCode, Hermes Agent and more.",
+    "install": "Install",
+    "repo": "View on GitHub",
+    "figcap": "Interactive figure: how a waffle slab carries load — ribs (nervaduras) and casetones. Drawn with the Anatomy skill."
+  },
+  "cycle": {
+    "title": "A non-linear lifecycle",
+    "sub": "Phases are states, not steps. It enters where your project is and loops back when facts change.",
+    "phases": [
+      {
+        "name": "Idea",
+        "q": "What are we making, for whom, why?",
+        "out": "Brief: goal, users, constraints, success criteria"
+      },
+      {
+        "name": "Research",
+        "q": "What exists, what rules apply?",
+        "out": "Norms, references, commercial products, user data"
+      },
+      {
+        "name": "Analysis",
+        "q": "What do the facts imply?",
+        "out": "Requirements, program, loads, flows, risks"
+      },
+      {
+        "name": "Design",
+        "q": "What is the solution?",
+        "out": "Layouts, plans, wireframes, concepts"
+      },
+      {
+        "name": "Specifications",
+        "q": "Exactly how is it built?",
+        "out": "Materials, sizes, standards, quantities, tokens"
+      },
+      {
+        "name": "Execution",
+        "q": "Produce and verify it",
+        "out": "DXF/PDF/Figma/code, rendered and checked"
+      }
+    ]
+  },
+  "features": {
+    "title": "What it does",
+    "items": [
+      {
+        "t": "Triage first",
+        "d": "Enters at the phase your project actually needs: already have a floor plan? It goes straight to Specifications."
+      },
+      {
+        "t": "Living work plan",
+        "d": "Keeps DESIGN_PLAN.md: brief, phase table, decisions, assumptions, open questions, prerequisites and deliverables."
+      },
+      {
+        "t": "Replies in your language",
+        "d": "The skill is written in English, but it always answers in the language you write in."
+      },
+      {
+        "t": "Asks when blocked",
+        "d": "Checks its tools first (CADCraft, Figma MCP, gh, python3). If something is missing it asks you for one concrete action and offers a fallback."
+      },
+      {
+        "t": "Honest output",
+        "d": "Labels assumptions, marks structural work as pre-design for a licensed professional, and checks every drawing visually before reporting."
+      }
+    ]
+  },
+  "install": {
+    "title": "Install",
+    "sub": "Clone the repo first, then pick your host.",
+    "copy": "Copy",
+    "copied": "Copied!",
+    "notes": {
+      "all": "Installs the skill for Claude Code, Codex, Gemini CLI, OpenCode and Hermes.",
+      "claude": "Plugin (recommended) inside Claude Code, or manual install.",
+      "codex": "Then type /skills or mention $design-lifecycle.",
+      "gemini": "Check it with /skills list.",
+      "opencode": "OpenCode also reads ~/.claude/skills/.",
+      "hermes": "Becomes the /design-lifecycle slash command.",
+      "chatgpt": "Download the zip, open Skills in the sidebar and upload it. For ChatGPT web, paste platforms/instructions.md into a Custom GPT.",
+      "cursor": "Run it in your project root.",
+      "copilot": "Run it in your project root.",
+      "agentsmd": "Windsurf, Aider, Zed and other AGENTS.md hosts. Run it in your project root."
+    },
+    "all": "All hosts"
+  },
+  "footer": {
+    "license": "MIT License",
+    "made": "Pre-design tool: structural output must be validated by a licensed professional."
+  }
+}

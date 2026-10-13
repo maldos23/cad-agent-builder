@@ -1,0 +1,103 @@
+{
+  "meta": {
+    "title": "cad-agent-builder — 面向 AI 智能体的设计生命周期 Skill"
+  },
+  "nav": {
+    "github": "GitHub",
+    "release": "发布",
+    "lang": "语言",
+    "theme": "切换主题"
+  },
+  "hero": {
+    "badge": "Agent Skill · 开放格式",
+    "title": "从模糊的想法到经过验证的设计交付物",
+    "sub": "面向设计师（建筑/CAD、UI/UX、产品、品牌）的 Skill 与智能体，以非线性生命周期运行于 Claude Code、Codex、ChatGPT、Gemini CLI、OpenCode、Hermes Agent 等平台。",
+    "install": "安装",
+    "repo": "在 GitHub 查看",
+    "figcap": "交互图：密肋楼板如何传力——肋梁与模壳。使用 Anatomy Skill 绘制。"
+  },
+  "cycle": {
+    "title": "非线性生命周期",
+    "sub": "阶段是状态而非步骤。从项目所处的位置进入，信息变化时回到前一阶段。",
+    "phases": [
+      {
+        "name": "构思",
+        "q": "做什么、为谁、为什么？",
+        "out": "简报：目标、用户、约束、成功标准"
+      },
+      {
+        "name": "调研",
+        "q": "已有什么，适用哪些规范？",
+        "out": "规范、参考、商业产品、用户数据"
+      },
+      {
+        "name": "分析",
+        "q": "这些事实意味着什么？",
+        "out": "需求、功能分区、荷载、流程、风险"
+      },
+      {
+        "name": "设计",
+        "q": "解决方案是什么？",
+        "out": "布局、图纸、线框图、概念"
+      },
+      {
+        "name": "规格说明",
+        "q": "具体如何建造？",
+        "out": "材料、尺寸、标准、工程量、设计令牌"
+      },
+      {
+        "name": "执行",
+        "q": "产出并验证",
+        "out": "DXF/PDF/Figma/代码，渲染并检查"
+      }
+    ]
+  },
+  "features": {
+    "title": "功能",
+    "items": [
+      {
+        "t": "先分诊",
+        "d": "直接进入项目真正需要的阶段：已有平面图？直接进入规格说明。"
+      },
+      {
+        "t": "动态工作计划",
+        "d": "维护 DESIGN_PLAN.md：简报、阶段表、决策、假设、待解决问题、前置条件和交付物。"
+      },
+      {
+        "t": "用你的语言回复",
+        "d": "Skill 用英文编写，但始终用你提问的语言回答。"
+      },
+      {
+        "t": "受阻时向你求助",
+        "d": "先检查工具（CADCraft、Figma MCP、gh、python3）。缺少时请你执行一个具体操作，并提供替代方案。"
+      },
+      {
+        "t": "如实输出",
+        "d": "标注假设，注明结构内容为初步设计、须由持证专业人员审核，并在汇报前目视检查每张图纸。"
+      }
+    ]
+  },
+  "install": {
+    "title": "安装",
+    "sub": "先克隆仓库，再选择你的平台。",
+    "copy": "复制",
+    "copied": "已复制！",
+    "notes": {
+      "all": "为 Claude Code、Codex、Gemini CLI、OpenCode 和 Hermes 安装 Skill。",
+      "claude": "在 Claude Code 中以插件安装（推荐），或手动安装。",
+      "codex": "然后输入 /skills 或提及 $design-lifecycle。",
+      "gemini": "运行 /skills list 确认。",
+      "opencode": "OpenCode 也读取 ~/.claude/skills/。",
+      "hermes": "安装后可通过 /design-lifecycle 命令调用。",
+      "chatgpt": "下载 zip，在侧边栏打开 Skills 并上传。ChatGPT 网页版请把 platforms/instructions.md 粘贴到自定义 GPT。",
+      "cursor": "在项目根目录运行。",
+      "copilot": "在项目根目录运行。",
+      "agentsmd": "Windsurf、Aider、Zed 等支持 AGENTS.md 的工具。在项目根目录运行。"
+    },
+    "all": "全部"
+  },
+  "footer": {
+    "license": "MIT 许可证",
+    "made": "初步设计工具：结构内容须由持证专业人员审核。"
+  }
+}

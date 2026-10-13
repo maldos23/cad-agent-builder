@@ -1,0 +1,83 @@
+/* Plano Bauhaus: papel blanco, tinta negra, retícula.
+   Texturas propias: teselas de piedra (homenaje al mosaico de Juan O'Gorman)
+   y aplanado rugoso con sombra dura (homenaje a los muros de Luis Barragán). */
+@import url("https://fonts.googleapis.com/css2?family=Jost:wght@400;500;700&family=JetBrains+Mono:wght@400&display=swap");
+
+:root { --ink: #111; --paper: #fff; --rule: rgba(0,0,0,.06); }
+html, body { margin: 0; background: var(--paper); }
+.radix-themes {
+  --default-font-family: "Jost", "Noto Sans JP", "Noto Sans SC", system-ui, sans-serif;
+  --heading-font-family: "Jost", "Noto Sans JP", "Noto Sans SC", system-ui, sans-serif;
+  --code-font-family: "JetBrains Mono", ui-monospace, monospace;
+  --color-background: var(--paper);
+  min-height: 100vh;
+  /* retícula de plano: cada 8 px fina, cada 64 px marcada */
+  background-image:
+    linear-gradient(var(--rule) 1px, transparent 1px), linear-gradient(90deg, var(--rule) 1px, transparent 1px),
+    linear-gradient(rgba(0,0,0,.025) 1px, transparent 1px), linear-gradient(90deg, rgba(0,0,0,.025) 1px, transparent 1px);
+  background-size: 64px 64px, 64px 64px, 8px 8px, 8px 8px;
+}
+
+.top { position: sticky; top: 0; z-index: 10; background: var(--paper); border-bottom: 2px solid var(--ink); }
+/* logo: círculo, cuadrado, triángulo */
+.logo { display: inline-flex; gap: 3px; align-items: center; }
+.logo i, .logo b, .logo u { display: block; width: 12px; height: 12px; background: var(--ink); }
+.logo i { border-radius: 50%; } .logo u { clip-path: polygon(50% 0, 100% 100%, 0 100%); }
+
+/* banda de teselas (O'Gorman) */
+.band { height: 22px; background: url(tex/tesserae.svg) 0 0 / 160px 160px repeat-x; border-block: 2px solid var(--ink); }
+
+.hero { background: none; }
+.title { max-width: 52rem; letter-spacing: -.02em; line-height: 1.05; color: var(--ink); }
+.lead { max-width: 44rem; }
+.rise > * { animation: rise .8s cubic-bezier(.2,.7,.2,1) both; }
+.rise > *:nth-child(2) { animation-delay: .08s } .rise > *:nth-child(3) { animation-delay: .16s } .rise > *:nth-child(4) { animation-delay: .24s }
+@keyframes rise { from { opacity: 0; transform: translateY(14px); } }
+
+/* figura: hoja de plano con marco y sombra dura */
+.fig { margin: 0 auto 3rem; max-width: 1100px; }
+.fig iframe { display: block; width: 100%; aspect-ratio: 16 / 10; border: 2px solid var(--ink); background: var(--paper); box-shadow: 10px 10px 0 var(--ink); }
+.fig figcaption { text-align: center; margin-top: 1.25rem; }
+
+.reveal { opacity: 0; transform: translateY(20px); transition: opacity .7s ease, transform .7s cubic-bezier(.2,.7,.2,1); transition-delay: calc(var(--i, 0) * 70ms); }
+.reveal.in { opacity: 1; transform: none; }
+
+/* ciclo: tarjetas de línea fina, la activa se rellena de tinta */
+.ring { position: relative; display: grid; grid-template-columns: repeat(3, 1fr); gap: 0; border: 2px solid var(--ink); }
+.ring .phase { border-radius: 0; box-shadow: none; border-right: 1px solid var(--ink); border-bottom: 1px solid var(--ink); transition: background .5s, color .5s; background: var(--paper); }
+.ring .phase::before, .ring .phase::after { display: none; }
+.phase.on { background: var(--ink); }
+.phase.on, .phase.on * { color: #fff !important; }
+.num { display: inline-grid; place-items: center; width: 1.5rem; height: 1.5rem; border: 1.5px solid currentColor; font-weight: 700; font-size: .8rem; }
+.phase:nth-child(3n+1) .num { border-radius: 50%; }
+.loop { display: none; }
+
+/* muros de Barragán: aplanado rugoso + sombra dura */
+.wall { background: url(tex/stucco.svg) 0 0 / 300px 300px !important; border: 2px solid var(--ink); box-shadow: 8px 8px 0 var(--ink); border-radius: 0; transition: transform .3s, box-shadow .3s; }
+.wall::before, .wall::after { display: none; }
+.wall:hover { transform: translate(-3px, -3px); box-shadow: 11px 11px 0 var(--ink); }
+.glyph { display: block; width: 28px; height: 28px; background: var(--ink); margin-bottom: .9rem; }
+.glyph.g0 { border-radius: 50%; } .glyph.g2 { clip-path: polygon(50% 0, 100% 100%, 0 100%); }
+
+/* instalación */
+#install .rt-Card { border: 2px solid var(--ink); box-shadow: none; }
+#install .rt-Card::before, #install .rt-Card::after { display: none; }
+#install .rt-Card { background: var(--paper); }
+.tabs { overflow-x: auto; }
+.panel { animation: rise .4s ease both; }
+.code { position: relative; background: #f7f7f5; border: 1px solid var(--ink); }
+.code pre { margin: 0; padding: 1rem 6.5rem 1rem 1rem; overflow-x: auto; white-space: pre; }
+.copy { position: absolute; top: .6rem; right: .6rem; }
+
+@media (max-width: 768px) { .ring { grid-template-columns: 1fr 1fr; } }
+@media (max-width: 480px) { .ring { grid-template-columns: 1fr; } .code pre { padding-right: 1rem; padding-top: 2.8rem; } .fig iframe { box-shadow: 6px 6px 0 var(--ink); } }
+
+@media (prefers-reduced-motion: reduce) {
+  *, *::before, *::after { animation: none !important; transition: none !important; }
+  .reveal { opacity: 1; transform: none; }
+}
+
+/* evita desborde horizontal en móvil: la fila de pestañas y los bloques de código se desplazan dentro de su caja */
+#install .rt-Card, #install .rt-TabsRoot, .tabs, .code { min-width: 0; max-width: 100%; }
+.tabs { flex-wrap: nowrap; }
+.title { overflow-wrap: anywhere; }

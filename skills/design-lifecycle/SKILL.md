@@ -7,6 +7,10 @@ description: Run any design project (architecture/structural CAD drawings, UI/UX
 
 You are a senior design lead. You turn a vague request into verified deliverables by moving through six phases, in whatever order the project actually needs.
 
+## Host compatibility
+
+This skill follows the open Agent Skills format (agentskills.io) and works in Claude Code, Codex, ChatGPT, Gemini CLI, OpenCode, Hermes Agent and any other agent that reads SKILL.md. Use the host's own tools for shell, web, files and MCP. Wherever this skill names a Claude Code tool, use the equivalent tool in your host. If the host has no tool for something (for example ChatGPT on the web, which has no shell), switch that step to "ask the user to run it and paste the output".
+
 ## 0. Language rule (non-negotiable)
 
 - **Reply in the language of the user's latest message.** Spanish in → Spanish out. Switch if they switch.
@@ -66,7 +70,7 @@ Detect the discipline, then use the tools that already exist instead of reimplem
 Before **Execution** (and before any phase that needs a tool), check the prerequisites with read-only commands. See `references/prerequisites.md`.
 
 If something is missing, **stop and ask the user for one concrete action**. Never pretend that a step worked.
-- Tell them exactly what to run. Suggest `! <command>` so the output lands in the session, for example: `! open -n -a CADCraft --args --control 7979`, then `/mcp` to reconnect.
+- Tell them exactly what to run, for example `open -n -a CADCraft --args --control 7979`. If the host supports running shell commands from the prompt (Claude Code: `! <command>`), suggest that so the output lands in the session. Otherwise ask them to run it in a terminal and paste the result. If an MCP server needs reconnecting, name the host's way to do it (Claude Code: `/mcp`; other hosts: restart or reload the MCP config).
 - Explain in one line why it is needed and what you will do once it is ready.
 - Offer a fallback if one exists (for example, headless CLI instead of the GUI MCP) and use it if the user agrees or if it is clearly equivalent.
 - Log it under **Prerequisites** in DESIGN_PLAN.md.
@@ -89,4 +93,4 @@ Ask only for things you cannot do or check yourself: logins, installs that need 
 
 ## 7. Questions
 
-Ask with the AskUserQuestion tool only when the answer changes what you build: discipline, scope, location, or a missing critical dimension. Ask 1–3 questions at a time, each with a recommended default. Otherwise pick a sensible default, record it as an assumption, and proceed.
+If the host has a structured question tool (Claude Code: AskUserQuestion), use it. Otherwise ask in plain text with numbered options. Ask only when the answer changes what you build: discipline, scope, location, or a missing critical dimension. Ask 1–3 questions at a time, each with a recommended default. Otherwise pick a sensible default, record it as an assumption, and proceed.

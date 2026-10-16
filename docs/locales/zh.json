@@ -1,6 +1,6 @@
 {
   "meta": {
-    "title": "cad-agent-builder — 面向 AI 智能体的设计生命周期 Skill"
+    "title": "cad-agent-builder — 面向土木工程与建筑设计的 CADCraft Skill"
   },
   "nav": {
     "github": "GitHub",
@@ -9,9 +9,9 @@
     "theme": "切换主题"
   },
   "hero": {
-    "badge": "Agent Skill · 开放格式",
-    "title": "从模糊的想法到经过验证的设计交付物",
-    "sub": "面向设计师（建筑/CAD、UI/UX、产品、品牌）的 Skill 与智能体，以非线性生命周期运行于 Claude Code、Codex、ChatGPT、Gemini CLI、OpenCode、Hermes Agent 等平台。",
+    "badge": "Agent Skill · CADCraft · 土木工程",
+    "title": "从模糊的想法到经过验证的施工图",
+    "sub": "面向土木工程与建筑设计的 Skill 与智能体，在 CADCraft 中绘制平面图、梁与楼板、配筋详图、设备管线、规格说明与工程量。可运行于 Claude Code、Codex、ChatGPT、Gemini CLI、OpenCode、Hermes Agent 等平台。",
     "install": "安装",
     "repo": "在 GitHub 查看",
     "figcap": "交互图：密肋楼板如何传力——肋梁与模壳。使用 Anatomy Skill 绘制。"
@@ -23,32 +23,32 @@
       {
         "name": "构思",
         "q": "做什么、为谁、为什么？",
-        "out": "简报：目标、用户、约束、成功标准"
+        "out": "简报：目标、使用者与用途、场地、约束"
       },
       {
         "name": "调研",
         "q": "已有什么，适用哪些规范？",
-        "out": "规范、参考、商业产品、用户数据"
+        "out": "规范与标准、场地数据、商业产品"
       },
       {
         "name": "分析",
         "q": "这些事实意味着什么？",
-        "out": "需求、功能分区、荷载、流程、风险"
+        "out": "功能分区、跨度、荷载、退界、风险"
       },
       {
         "name": "设计",
         "q": "解决方案是什么？",
-        "out": "布局、图纸、线框图、概念"
+        "out": "平面图、梁、楼板与密肋布置、剖面"
       },
       {
         "name": "规格说明",
         "q": "具体如何建造？",
-        "out": "材料、尺寸、标准、工程量、设计令牌"
+        "out": "材料、商用尺寸、配筋、工程量"
       },
       {
         "name": "执行",
         "q": "产出并验证",
-        "out": "DXF/PDF/Figma/代码，渲染并检查"
+        "out": "CADCraft DXF + PDF + PNG，渲染并检查"
       }
     ]
   },
@@ -69,7 +69,7 @@
       },
       {
         "t": "受阻时向你求助",
-        "d": "先检查工具（CADCraft、Figma MCP、gh、python3）。缺少时请你执行一个具体操作，并提供替代方案。"
+        "d": "先检查工具（CADCraft 应用、CLI 或 MCP，python3）。缺少时请你执行一个具体操作，并提供替代方案。"
       },
       {
         "t": "如实输出",

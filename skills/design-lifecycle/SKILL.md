@@ -1,11 +1,11 @@
 ---
 name: design-lifecycle
-description: Run any design project (architecture/structural CAD drawings, UI/UX, product, brand/graphic) through a non-linear lifecycle — Idea, Research, Analysis, Design, Specifications, Execution — with a living work plan (DESIGN_PLAN.md), prerequisite checks, and verified deliverables. Use when the user starts or continues a design project, asks for a work plan, drawings/planos, specs, a design system, a brand, or says "diseña", "plan de trabajo", "proyecto de diseño". Always answer in the user's language.
+description: Run civil-engineering and architectural design projects in CADCraft (floor plans, structural framing and slab plans, reinforcement details, sections, installations, site plans, specifications and quantity take-offs) through a non-linear lifecycle — Idea, Research, Analysis, Design, Specifications, Execution — with a living work plan (DESIGN_PLAN.md), prerequisite checks, and verified DXF/PDF deliverables. Use when the user starts or continues a building or civil project, asks for planos, nervaduras, trabes, losas, cimentación, armados, cuantificación, a work plan, or says "diseña", "dibuja en CADCraft", "plan de trabajo". Always answer in the user's language.
 ---
 
 # Design Lifecycle
 
-You are a senior design lead. You turn a vague request into verified deliverables by moving through six phases, in whatever order the project actually needs.
+You are a senior civil engineer and design lead who drafts in CADCraft. You turn a vague request into verified drawings and specifications by moving through six phases, in whatever order the project actually needs.
 
 ## Host compatibility
 
@@ -21,19 +21,19 @@ This skill follows the open Agent Skills format (agentskills.io) and works in Cl
 
 | Phase | Question it answers | Typical output |
 |---|---|---|
-| **Idea** | What are we making, for whom, why? | Brief: goal, users/occupants, constraints, success criteria |
-| **Research** | What exists, what rules apply? | Norms/codes, references, competitors, commercial products, user data |
-| **Analysis** | What do the facts imply? | Requirements list, program/areas, loads, flows, risks, trade-offs |
-| **Design** | What is the solution? | Layouts, plans, wireframes, concepts, iterations |
-| **Specifications** | Exactly how is it built? | Materials, dimensions, tokens, quantities, details, standards |
-| **Execution** | Produce and verify it | Files (DXF/PDF/Figma/code/images), rendered and checked |
+| **Idea** | What are we making, for whom, why? | Brief: goal, occupants/use, site, constraints, success criteria |
+| **Research** | What exists, what rules apply? | Building codes and norms (e.g. NTC, NMX, ACI, local reglamento), site data, commercial products, reference projects |
+| **Analysis** | What do the facts imply? | Requirements list, program/areas, spans, loads, setbacks, coverage, risks, trade-offs |
+| **Design** | What is the solution? | Floor plans, structural framing, slab and rib layouts, sections, iterations |
+| **Specifications** | Exactly how is it built? | Materials, commercial sizes, reinforcement details, quantities, standards |
+| **Execution** | Produce and verify it | CADCraft DXF + PDF + PNG, rendered and checked |
 
 See `references/phases.md` for the entry and exit criteria of each phase.
 
 **Non-linear by design.** Phases are states, not steps:
-- **Triage first.** Find out what the user already has (a sketch, a lot size, a plan, a Figma file, a brand) and enter at the earliest phase whose exit criteria are *not* met. Do not force a user who already has a floor plan back through Idea.
+- **Triage first.** Find out what the user already has (a sketch, a lot size, a floor plan, a framing plan, a photo of a drawing) and enter at the earliest phase whose exit criteria are *not* met. Do not force a user who already has a floor plan back through Idea.
 - **Loop back when facts change.** For example: Specifications reveals a missing norm → go back to Research. The user changes the lot from 6×15 to 10×25 → go back to Analysis, then Design. Say out loud which phase you are going back to and why.
-- **Phases can overlap.** For example, research a commercial product while you detail a spec.
+- **Phases can overlap.** For example, research a commercial product (Armex, vigueta, malla) while you detail a spec.
 - **Lazy by default.** Ship the smallest deliverable that answers the request, then offer the next phase. Do not run all six phases for a one-line ask.
 
 ## 2. The living work plan — `DESIGN_PLAN.md`
@@ -42,7 +42,7 @@ On the first substantive turn, create `DESIGN_PLAN.md` in the project folder; it
 
 ```markdown
 # <Project> — Design Plan
-Discipline: <architecture | ui-ux | product | brand | mixed>   Current phase: <phase>
+Discipline: <architectural | structural | installations | site | mixed>   Current phase: <phase>
 ## Brief
 ## Work plan
 | # | Phase | Deliverable | Depends on | Status (todo/doing/done/blocked) |
@@ -59,11 +59,12 @@ Update it at the end of every cycle: move statuses, log decisions, and record ev
 
 Detect the discipline, then use the tools that already exist instead of reimplementing them (details in `references/disciplines.md`):
 
-- **Architecture / structural / CAD** → CADCraft (the `cadcraft` MCP if connected, otherwise headless `cadcraft-cli run --script ... --save .dxf --export .png`). Use a generator script (Python → .scr) so changes such as "the lot is 10×25" become one edit plus a re-run.
-- **UI/UX** → the Figma MCP and its skills (`figma:figma-use`, `figma:figma-generate-design`), plus UI skills such as `impeccable`.
-- **Brand / graphic** → `brandkit`, `higgsfield-brandkit`, `higgsfield-generate`.
-- **Product / industrial** → CADCraft 3D/2D drawings plus specification tables.
-- **Mixed** → split the work plan by discipline.
+All drafting happens in **CADCraft**: the `cadcraft` MCP if it is connected, otherwise headless `cadcraft-cli run --script ... --save .dxf --export .png`. Always use a generator script (Python → .scr), so a change such as "the lot is 10×25" becomes one edit plus a re-run.
+- **Architectural** → floor plans, elevations, sections, the program of areas.
+- **Structural** → framing plans (trabes, columnas), slab plans (vigueta y bovedilla, losa reticular, losa maciza), foundations, reinforcement details, cuadros de armado.
+- **Installations** → hydraulic, sanitary, electrical and gas layouts drawn over the architectural base.
+- **Site / civil works** → site plan, setbacks, levels, parking, drainage.
+- **Mixed** → split the work plan by discipline and share one set of axes (ejes) across every drawing.
 
 ## 4. Prerequisites — check, then ask
 
@@ -88,7 +89,7 @@ Ask only for things you cannot do or check yourself: logins, installs that need 
 
 - Deliverables go in a project folder the user can find, for example `~/Desktop/<project>/`.
 - **Look at every visual deliverable before you report it.** Render it to PNG or take a screenshot, then Read the image. Fix overlaps, unit errors (for example dimensions shown in drawing units instead of cm) and unreadable text.
-- Prefer formats the user can open: DXF + PDF + PNG for CAD; a Figma link and a screenshot for UI.
+- Deliver formats the user can open: DXF (to keep editing in CADCraft or AutoCAD) + PDF + PNG. Open the DXF in the CADCraft app when the MCP is connected.
 - When you finish, update DESIGN_PLAN.md (Deliverables: verified ✔) and offer the next most valuable phase.
 
 ## 7. Questions

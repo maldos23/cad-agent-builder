@@ -2,7 +2,7 @@
 
 **English** · [Español](README.es.md) · [中文](README.zh.md) · [日本語](README.ja.md) · [🌐 Website](https://maldos23.github.io/cad-agent-builder/)
 
-A **skill and agent for designers**: architecture/CAD, UI/UX, product and brand. They take a request from a vague idea to verified deliverables through a **non-linear lifecycle**. The skill uses the open [Agent Skills](https://agentskills.io) format, so it runs in Claude Code, Codex, ChatGPT, Gemini CLI, OpenCode, Hermes Agent and more.
+A **skill and agent for civil engineering and architectural design in [CADCraft](https://github.com/storytold/cadcraft)**: floor plans, structural framing and slabs, reinforcement details, installations, site plans, specifications and quantities. They take a request from a vague idea to verified DXF/PDF drawings through a **non-linear lifecycle**. The skill uses the open [Agent Skills](https://agentskills.io) format, so it runs in Claude Code, Codex, ChatGPT, Gemini CLI, OpenCode, Hermes Agent and more.
 
 > 🌐 **Website:** [https://maldos23.github.io/cad-agent-builder/](https://maldos23.github.io/cad-agent-builder/)
 
@@ -17,8 +17,8 @@ A **skill and agent for designers**: architecture/CAD, UI/UX, product and brand.
 - **Triage first.** It enters at the phase your project actually needs. For example, if you already have a floor plan, it skips straight to Specifications.
 - **Living work plan.** It keeps a `DESIGN_PLAN.md` with the brief, a phase table, decisions, assumptions, open questions, prerequisites and deliverables.
 - **Replies in your language.** The skill is written in English, but answers always follow the language you write in.
-- **Asks when it is blocked.** It checks its tools first (CADCraft app/CLI/MCP, Figma MCP, `gh`, `python3`). If something is missing, it asks you for one concrete action and offers a fallback.
-- **Honest output.** It labels assumptions on the deliverables, marks structural work as pre-design that a licensed professional must validate, and checks every drawing or screen visually before reporting.
+- **Asks when it is blocked.** It checks its tools first (CADCraft app/CLI/MCP, `python3`). If something is missing, it asks you for one concrete action and offers a fallback.
+- **Honest output.** It labels assumptions on the deliverables, marks structural work as pre-design that a licensed professional must validate, and checks every drawing visually before reporting.
 
 ## 🧰 Compatibility
 
@@ -160,17 +160,15 @@ rm -rf ~/.claude/skills/design-lifecycle ~/.claude/agents/design-lead.md \
 ## 🎯 Use
 
 - Describe your project, for example *"design the slab ribs for a 3-storey duplex on a 10×25 lot"*. The skill activates automatically, or you can call it by name: `/design-lifecycle` (Claude Code) or `$design-lifecycle` (Codex).
-- In Claude Code you can also ask: *"use the design-lead agent to plan my brand identity"*.
+- In Claude Code you can also ask: *"use the design-lead agent to draw the framing plan of this house"*.
 
-## 🛠️ Optional tools by discipline
+## 🛠️ Required tool
 
-| Discipline | Tools |
+| Use | Tool |
 |---|---|
-| Architecture / CAD | [CADCraft](https://github.com/storytold/cadcraft): the app with `--control 7979` for the MCP, or `cadcraft-cli` for headless use |
-| UI/UX | The Figma MCP |
-| Brand | Image-generation tools in your host |
+| Drafting (all disciplines) | [CADCraft](https://github.com/storytold/cadcraft): the app with `--control 7979` for the MCP, or `cadcraft-cli` for headless use |
 
-None of these are required. When a tool is missing, the agent tells you what to install or run.
+If CADCraft is missing, the agent tells you what to install or run.
 
 ## 📄 License
 

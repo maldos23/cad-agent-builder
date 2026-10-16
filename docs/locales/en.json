@@ -1,6 +1,6 @@
 {
   "meta": {
-    "title": "cad-agent-builder — design lifecycle skill for AI agents"
+    "title": "cad-agent-builder — CADCraft skill for civil engineering and architectural design"
   },
   "nav": {
     "github": "GitHub",
@@ -9,9 +9,9 @@
     "theme": "Toggle theme"
   },
   "hero": {
-    "badge": "Agent Skill · open format",
-    "title": "From a vague idea to verified design deliverables",
-    "sub": "A skill and agent for designers (architecture/CAD, UI/UX, product, brand) that runs a non-linear lifecycle in Claude Code, Codex, ChatGPT, Gemini CLI, OpenCode, Hermes Agent and more.",
+    "badge": "Agent Skill · CADCraft · civil engineering",
+    "title": "From a vague idea to verified construction drawings",
+    "sub": "A skill and agent for civil engineering and architectural design in CADCraft: floor plans, framing and slabs, reinforcement details, installations, specifications and quantities. Runs in Claude Code, Codex, ChatGPT, Gemini CLI, OpenCode, Hermes Agent and more.",
     "install": "Install",
     "repo": "View on GitHub",
     "figcap": "Interactive figure: how a waffle slab carries load — ribs (nervaduras) and casetones. Drawn with the Anatomy skill."
@@ -23,32 +23,32 @@
       {
         "name": "Idea",
         "q": "What are we making, for whom, why?",
-        "out": "Brief: goal, users, constraints, success criteria"
+        "out": "Brief: goal, occupants and use, site, constraints"
       },
       {
         "name": "Research",
         "q": "What exists, what rules apply?",
-        "out": "Norms, references, commercial products, user data"
+        "out": "Codes and norms, site data, commercial products"
       },
       {
         "name": "Analysis",
         "q": "What do the facts imply?",
-        "out": "Requirements, program, loads, flows, risks"
+        "out": "Program, spans, loads, setbacks, risks"
       },
       {
         "name": "Design",
         "q": "What is the solution?",
-        "out": "Layouts, plans, wireframes, concepts"
+        "out": "Floor plans, framing, slab and rib layouts, sections"
       },
       {
         "name": "Specifications",
         "q": "Exactly how is it built?",
-        "out": "Materials, sizes, standards, quantities, tokens"
+        "out": "Materials, commercial sizes, reinforcement, quantities"
       },
       {
         "name": "Execution",
         "q": "Produce and verify it",
-        "out": "DXF/PDF/Figma/code, rendered and checked"
+        "out": "CADCraft DXF + PDF + PNG, rendered and checked"
       }
     ]
   },
@@ -69,7 +69,7 @@
       },
       {
         "t": "Asks when blocked",
-        "d": "Checks its tools first (CADCraft, Figma MCP, gh, python3). If something is missing it asks you for one concrete action and offers a fallback."
+        "d": "Checks its tools first (CADCraft app, CLI or MCP, python3). If something is missing it asks you for one concrete action and offers a fallback."
       },
       {
         "t": "Honest output",

@@ -1,5 +1,10 @@
 # Changelog
 
+## v1.2.0 — 2026-10-16
+- Refocused on **CADCraft and civil engineering / architectural design**: floor plans, structural framing and slabs, reinforcement details, installations, site plans, specifications and quantities.
+- Removed UI/UX, product and brand routing (Figma, brandkit) from the skill, agent, references, READMEs and website.
+- New discipline patterns: framing plans with section marks (e.g. TR15X20C25), slab/rib layouts, installations, site works.
+
 ## v1.1.0 — 2026-10-13
 - Multi-host support: Codex, ChatGPT (desktop skills zip + Custom GPT instructions), Gemini CLI, OpenCode (`~/.agents/skills`), Hermes Agent (`~/.hermes/skills`), Cursor/Copilot/Windsurf/Aider (`platforms/instructions.md`).
 - `install.sh [all|claude|agents|hermes]` installs into every host.

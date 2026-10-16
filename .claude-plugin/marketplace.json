@@ -1,6 +1,6 @@
 {
   "name": "cad-agent-builder",
-  "description": "Design-lifecycle skill + design-lead agent for designers (architecture/CAD, UI/UX, product, brand).",
+  "description": "Design-lifecycle skill + design-lead agent for civil engineering and architecture in CADCraft.",
   "owner": {
     "name": "maldos23"
   },
@@ -9,7 +9,7 @@
       "name": "cad-agent-builder",
       "source": "./",
       "description": "Design-lifecycle skill + design-lead agent for designers.",
-      "version": "1.1.0"
+      "version": "1.2.0"
     }
   ]
 }

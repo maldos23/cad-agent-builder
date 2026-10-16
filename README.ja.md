@@ -2,7 +2,7 @@
 
 [English](README.md) · [Español](README.es.md) · [中文](README.zh.md) · **日本語** · [🌐 ウェブサイト](https://maldos23.github.io/cad-agent-builder/)
 
-デザイナー向けの **スキル + エージェント** です。建築/CAD、UI/UX、プロダクト、ブランドに対応します。**非線形のライフサイクル**で、あいまいな依頼を検証済みの成果物に仕上げます。オープンな [Agent Skills](https://agentskills.io) 形式を採用しているため、Claude Code、Codex、ChatGPT、Gemini CLI、OpenCode、Hermes Agent などで動作します。
+**土木工学と建築設計** のためのスキル + エージェントです。[CADCraft](https://github.com/storytold/cadcraft) で作図します：平面図、構造（梁・スラブ・リブ）、配筋詳細、設備、配置図、仕様、数量。**非線形のライフサイクル**で、あいまいな依頼を検証済みの DXF/PDF 図面に仕上げます。オープンな [Agent Skills](https://agentskills.io) 形式を採用しているため、Claude Code、Codex、ChatGPT、Gemini CLI、OpenCode、Hermes Agent などで動作します。
 
 > 🌐 **ウェブサイト:** [https://maldos23.github.io/cad-agent-builder/](https://maldos23.github.io/cad-agent-builder/)
 
@@ -17,8 +17,8 @@
 - **最初にトリアージ**：プロジェクトに本当に必要なフェーズから始めます。たとえば平面図がすでにあれば、そのまま仕様フェーズに進みます。
 - **生きた作業計画**：`DESIGN_PLAN.md` を更新し続けます。ブリーフ、フェーズ表、決定事項、仮定、未解決の質問、前提条件、成果物を記録します。
 - **あなたの言語で返答**：スキル自体は英語で書かれていますが、返答は常に話しかけた言語に合わせます。
-- **行き詰まったら依頼**：まず必要なツール（CADCraft のアプリ/CLI/MCP、Figma MCP、`gh`、`python3`）を確認します。不足があれば具体的な操作をひとつだけ依頼し、代替案も示します。
-- **正直な出力**：成果物に仮定を明記します。構造関連は予備設計であり、有資格の専門家による確認が必要だと明示します。報告前には図面や画面をすべて目視で確認します。
+- **行き詰まったら依頼**：まず必要なツール（CADCraft のアプリ/CLI/MCP、`python3`）を確認します。不足があれば具体的な操作をひとつだけ依頼し、代替案も示します。
+- **正直な出力**：成果物に仮定を明記します。構造関連は予備設計であり、有資格の専門家による確認が必要だと明示します。報告前には図面をすべて目視で確認します。
 
 ## 🧰 対応環境
 
@@ -160,17 +160,15 @@ rm -rf ~/.claude/skills/design-lifecycle ~/.claude/agents/design-lead.md \
 ## 🎯 使い方
 
 - プロジェクトを説明するだけで使えます。例：「10×25 m の敷地に建つ 3 階建てデュプレックスのスラブリブを設計して」。スキルは自動で有効になります。名前で呼び出すこともできます：`/design-lifecycle`（Claude Code）、`$design-lifecycle`（Codex）。
-- Claude Code では「design-lead エージェントでブランドアイデンティティを計画して」と頼むこともできます。
+- Claude Code では「design-lead エージェントでこの住宅の梁伏図を描いて」と頼むこともできます。
 
-## 🛠️ 分野別のオプションツール
+## 🛠️ 必要なツール
 
-| 分野 | ツール |
+| 用途 | ツール |
 |---|---|
-| 建築 / CAD | [CADCraft](https://github.com/storytold/cadcraft)：MCP を使う場合はアプリを `--control 7979` で起動、またはヘッドレスの `cadcraft-cli` を使用 |
-| UI/UX | Figma MCP |
-| ブランド | ホストの画像生成ツール |
+| 作図（全分野） | [CADCraft](https://github.com/storytold/cadcraft)：MCP を使う場合はアプリを `--control 7979` で起動、またはヘッドレスの `cadcraft-cli` を使用 |
 
-どれも必須ではありません。ツールが足りない場合は、何をインストール・実行すればよいかをエージェントが案内します。
+CADCraft がない場合は、何をインストール・実行すればよいかをエージェントが案内します。
 
 ## 📄 ライセンス
 

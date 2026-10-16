@@ -1,6 +1,6 @@
-# Disciplines — deliverables and tools
+# Disciplines — deliverables and CADCraft patterns
 
-## Architecture / structural (CAD)
+## Architectural and structural (CADCraft)
 - **Deliverables:**
   - floor plans
   - framing and slab plans (for example vigueta-y-bovedilla rib layouts)
@@ -19,17 +19,16 @@
   - Use layers per system: MUROS, CADENAS, VIGUETAS, HUECOS, COTAS, TEXTOS, ACERO, DETALLE.
 - **Mexico:** NMX-C-406 (vigueta y bovedilla), NMX-B-506 (rebar), NMX-B-290 (welded mesh), NMX-C-404 (block). Commercial items include Armex 15x15-4 and 15x20-4, 12 m bars, and 2.5×40 m mesh rolls. Always add "pre-design — validate with DRO/calculista".
 
-## UI/UX / digital product
-- **Deliverables:** user flows, wireframes, high-fidelity screens, design system tokens, components and states, handoff notes.
-- **Tools:** the Figma MCP. Load `figma:figma-use` before `use_figma`, and use `figma:figma-generate-design` for screens. Use `impeccable` and the other UI skills for critique and polish. Use Claude in Chrome to check live pages.
+## Structural details
+- **Deliverables:** framing plans with section marks (for example TR15X20C25), cuadros de trabes y columnas, slab plans with rib direction and spacing, foundation plans, details of cadenas, castillos, bastones and stirrups.
+- **Pattern:** draw each beam as a double line at its real width with its label. Draw slabs with the vigueta direction arrow and dashed viguetas at their spacing. Mark voids with an X.
 
-## Brand / graphic
-- **Deliverables:** strategy (attributes, voice), logo system, palette, typography, applications, brandbook.
-- **Tools:** `brandkit`, `higgsfield-brandkit`, `higgsfield-generate`.
+## Installations
+- **Deliverables:** hydraulic, sanitary, electrical and gas plans over the architectural base, with symbols, pipe diameters and slopes.
+- **Pattern:** one layer per system, over the same axes as the architectural plan.
 
-## Product / industrial
-- **Deliverables:** concept sketches, 2D/3D drawings, bill of materials, tolerances, manufacturing notes.
-- **Tools:** CADCraft (its 3D/modeling commands), plus specification tables.
+## Site / civil works
+- **Deliverables:** site plan with lot, setbacks, coverage (COS/CUS), parking, levels and drainage.
 
 ## Mixed projects
-Split the work plan into one track per discipline. Share the Idea, Research and Analysis phases across the tracks, and run Design, Specifications and Execution separately for each track.
+Split the work plan into one track per discipline. Share the Idea, Research and Analysis phases and one set of axes across all drawings, and run Design, Specifications and Execution separately for each track.

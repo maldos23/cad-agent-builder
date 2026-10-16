@@ -1,6 +1,6 @@
 {
   "meta": {
-    "title": "cad-agent-builder — skill de ciclo de diseño para agentes de IA"
+    "title": "cad-agent-builder — skill de CADCraft para ingeniería civil y diseño arquitectónico"
   },
   "nav": {
     "github": "GitHub",
@@ -9,9 +9,9 @@
     "theme": "Cambiar tema"
   },
   "hero": {
-    "badge": "Agent Skill · formato abierto",
-    "title": "De una idea vaga a entregables de diseño verificados",
-    "sub": "Una skill y un agente para diseñadores (arquitectura/CAD, UI/UX, producto, marca) que siguen un ciclo de vida no lineal en Claude Code, Codex, ChatGPT, Gemini CLI, OpenCode, Hermes Agent y más.",
+    "badge": "Agent Skill · CADCraft · ingeniería civil",
+    "title": "De una idea vaga a planos constructivos verificados",
+    "sub": "Una skill y un agente para ingeniería civil y diseño arquitectónico en CADCraft: plantas, trabes y losas, detalles de armado, instalaciones, especificaciones y cuantificación. Funciona en Claude Code, Codex, ChatGPT, Gemini CLI, OpenCode, Hermes Agent y más.",
     "install": "Instalar",
     "repo": "Ver en GitHub",
     "figcap": "Figura interactiva: cómo trabaja una losa reticular — nervaduras y casetones. Dibujada con la skill Anatomy."
@@ -23,32 +23,32 @@
       {
         "name": "Idea",
         "q": "¿Qué hacemos, para quién y por qué?",
-        "out": "Brief: objetivo, usuarios, restricciones, criterios de éxito"
+        "out": "Brief: objetivo, ocupantes y uso, terreno, restricciones"
       },
       {
         "name": "Investigación",
         "q": "¿Qué existe y qué normas aplican?",
-        "out": "Normas, referencias, productos comerciales, datos de usuario"
+        "out": "Reglamentos y normas, datos del terreno, productos comerciales"
       },
       {
         "name": "Análisis",
         "q": "¿Qué implican los datos?",
-        "out": "Requisitos, programa, cargas, flujos, riesgos"
+        "out": "Programa, claros, cargas, restricciones, riesgos"
       },
       {
         "name": "Diseño",
         "q": "¿Cuál es la solución?",
-        "out": "Plantas, planos, wireframes, conceptos"
+        "out": "Plantas, trabes, losas y nervaduras, cortes"
       },
       {
         "name": "Especificaciones",
         "q": "¿Cómo se construye exactamente?",
-        "out": "Materiales, medidas, normas, cantidades, tokens"
+        "out": "Materiales, medidas comerciales, armados, cuantificación"
       },
       {
         "name": "Ejecución",
         "q": "Producirlo y verificarlo",
-        "out": "DXF/PDF/Figma/código, renderizado y revisado"
+        "out": "DXF + PDF + PNG de CADCraft, renderizado y revisado"
       }
     ]
   },
@@ -69,7 +69,7 @@
       },
       {
         "t": "Pide ayuda cuando se bloquea",
-        "d": "Primero revisa sus herramientas (CADCraft, MCP de Figma, gh, python3). Si falta algo, te pide una acción concreta y te ofrece una alternativa."
+        "d": "Primero revisa sus herramientas (app, CLI o MCP de CADCraft, python3). Si falta algo, te pide una acción concreta y te ofrece una alternativa."
       },
       {
         "t": "Resultados honestos",

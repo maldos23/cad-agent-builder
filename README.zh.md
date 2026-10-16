@@ -2,7 +2,7 @@
 
 [English](README.md) · [Español](README.es.md) · **中文** · [日本語](README.ja.md) · [🌐 网站](https://maldos23.github.io/cad-agent-builder/)
 
-面向设计师的 **Skill + 智能体**，覆盖建筑/CAD、UI/UX、产品与品牌。它通过**非线性生命周期**把模糊的需求变成经过验证的交付物。采用开放的 [Agent Skills](https://agentskills.io) 格式，可在 Claude Code、Codex、ChatGPT、Gemini CLI、OpenCode、Hermes Agent 等平台运行。
+面向 **土木工程与建筑设计** 的 Skill + 智能体，在 [CADCraft](https://github.com/storytold/cadcraft) 中绘图：平面图、结构（梁、楼板、密肋）、配筋详图、设备管线、总平面、规格说明与工程量。它通过**非线性生命周期**把模糊的需求变成经过验证的 DXF/PDF 图纸。采用开放的 [Agent Skills](https://agentskills.io) 格式，可在 Claude Code、Codex、ChatGPT、Gemini CLI、OpenCode、Hermes Agent 等平台运行。
 
 > 🌐 **网站:** [https://maldos23.github.io/cad-agent-builder/](https://maldos23.github.io/cad-agent-builder/)
 
@@ -17,8 +17,8 @@
 - **先分诊**：直接进入项目真正需要的阶段。例如已有平面图时，直接进入规格说明。
 - **动态工作计划**：维护一份 `DESIGN_PLAN.md`，包含需求简报、阶段表、决策、假设、待解决问题、前置条件和交付物。
 - **用你的语言回复**：Skill 本身用英文编写，但始终用你提问时使用的语言回答。
-- **受阻时向你求助**：先检查所需工具（CADCraft 应用/CLI/MCP、Figma MCP、`gh`、`python3`）。缺少时，会请你执行一个具体操作，并提供替代方案。
-- **如实输出**：在交付物上标注假设，注明结构相关内容只是初步设计、必须由持证专业人员审核，并在汇报前目视检查每张图纸或界面。
+- **受阻时向你求助**：先检查所需工具（CADCraft 应用/CLI/MCP、`python3`）。缺少时，会请你执行一个具体操作，并提供替代方案。
+- **如实输出**：在交付物上标注假设，注明结构相关内容只是初步设计、必须由持证专业人员审核，并在汇报前目视检查每张图纸。
 
 ## 🧰 兼容性
 
@@ -160,17 +160,15 @@ rm -rf ~/.claude/skills/design-lifecycle ~/.claude/agents/design-lead.md \
 ## 🎯 使用
 
 - 直接描述你的项目，例如「为 10×25 米地块上的三层复式公寓设计楼板肋梁」。Skill 会自动启用，也可以按名称调用：`/design-lifecycle`（Claude Code）或 `$design-lifecycle`（Codex）。
-- 在 Claude Code 中还可以说：「用 design-lead 智能体规划我的品牌形象」。
+- 在 Claude Code 中还可以说：「用 design-lead 智能体绘制这栋房子的梁平面图」。
 
-## 🛠️ 各专业的可选工具
+## 🛠️ 所需工具
 
-| 专业 | 工具 |
+| 用途 | 工具 |
 |---|---|
-| 建筑 / CAD | [CADCraft](https://github.com/storytold/cadcraft)：用 `--control 7979` 启动应用以使用 MCP，或使用无界面的 `cadcraft-cli` |
-| UI/UX | Figma MCP |
-| 品牌 | 所在平台的图像生成工具 |
+| 绘图（所有专业） | [CADCraft](https://github.com/storytold/cadcraft)：用 `--control 7979` 启动应用以使用 MCP，或使用无界面的 `cadcraft-cli` |
 
-这些都不是必需的。缺少某个工具时，智能体会告诉你要安装或运行什么。
+如果缺少 CADCraft，智能体会告诉你要安装或运行什么。
 
 ## 📄 许可证
 

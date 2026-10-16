@@ -7,10 +7,9 @@ Run read-only checks first. If a check fails, ask the user for **one concrete ac
 | CADCraft app | `ls /Applications/CADCraft.app` | Install CADCraft (github.com/storytold/cadcraft) |
 | CADCraft CLI | `command -v cadcraft-cli \|\| ls ~/.local/bin/cadcraft-cli` | Download the CLI from the CADCraft releases and place it in `~/.local/bin` |
 | CADCraft MCP live | the cadcraft MCP tools (`mcp__cadcraft__*` in Claude Code) exist and respond | `open -n -a CADCraft --args --control 7979`, then reconnect the MCP (Claude Code: `/mcp`). Offer the headless CLI as a fallback |
-| Figma MCP | the `mcp__figma__whoami` tool works | Connect the Figma MCP in the host (Claude Code: `/mcp`) and log in |
 | GitHub | `gh auth status` | `gh auth login` |
 | Python 3 | `command -v python3` | `xcode-select --install` (macOS) or install Python |
-| Project data | a file or value exists | Share the file or path (plans, lot size, brand assets), or confirm the stated assumption |
+| Project data | a file or value exists | Share the file or path (plans, lot size, soil study, existing drawings), or confirm the stated assumption |
 
 ## How to ask (template)
 
